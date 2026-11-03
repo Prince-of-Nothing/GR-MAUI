@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GR-MAUI.Desktop/GR-MAUI.Desktop.csproj" />
+  <Project Path="GR-MAUI/GR-MAUI.csproj" />
+</Solution>
