@@ -23,6 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XplatProbe\XplatProbe.csproj" />
+    <ProjectReference Include="..\GR-MAUI\GR-MAUI.csproj" />
   </ItemGroup>
 </Project>
