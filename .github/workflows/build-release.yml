@@ -26,13 +26,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          api-level: 33
-          ndk-version: r27b
-          install-google-packages: true
-          install-android-sdk: true
-          cache-key: android-sdk
-      - name: Accept Android SDK licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+          cmdline-tools-version: 'latest'
+          accept-android-sdk-licenses: 'yes'
+          packages: 'platforms;android-33,build-tools;34.0.0'
       - name: Restore
         run: dotnet restore ${{ env.SOLUTION }}
       - name: Build Android
