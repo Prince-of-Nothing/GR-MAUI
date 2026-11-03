@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: GR-MAUI-Android-APK
-          path: GR-MAUI.Android/bin/Release/net9.0-android/*.apk
+          path: GR-MAUI.Android/bin/Release/net10.0-android/*.apk
 
   release:
     needs: [build-android]
