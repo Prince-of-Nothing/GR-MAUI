@@ -20,6 +20,10 @@ jobs:
           dotnet-version: '10.0.x'
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          api-level: 33
+          install-google-packages: true
+          install-android-sdk: true
       - name: Restore
         run: dotnet restore ${{ env.SOLUTION }}
       - name: Build Android
