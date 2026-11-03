@@ -30,7 +30,7 @@ jobs:
           accept-android-sdk-licenses: true
           packages: platforms;android-33
       - name: Restore Workloads
-        run: dotnet workload restore
+        run: dotnet workload install android
       - name: Restore
         run: dotnet restore ${{ env.SOLUTION }}
       - name: Build Android
