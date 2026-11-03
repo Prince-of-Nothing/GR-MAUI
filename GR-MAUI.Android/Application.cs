@@ -2,8 +2,9 @@
 using Android.Runtime;
 using Avalonia;
 using Avalonia.Android;
+using GR_MAUI;
 
-namespace XplatProbe.Android
+namespace GR_MAUI.Android
 {
     [Application]
     public class Application : AvaloniaAndroidApplication<App>
