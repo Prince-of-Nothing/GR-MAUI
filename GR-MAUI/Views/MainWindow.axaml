@@ -1,22 +1,34 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:GR_MAUI.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:models="using:GR_MAUI.Models"
         x:Class="GR_MAUI.Views.MainWindow"
         x:DataType="vm:MainViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="GR_MAUI">
+        Title="GidiReads"
+        Width="800" Height="600"
+        Background="#2E1A2A">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <StackPanel Margin="20">
+        <TextBlock Text="GidiReads" FontSize="32" FontWeight="Bold" Foreground="#FFE6E6FA" Margin="0,0,0,10"/>
 
+        <Button Content="Load Books" Command="{Binding LoadBooksCommand}" Margin="0,0,0,10" Background="#8B3A62" Foreground="White"/>
+
+        <ProgressBar IsVisible="{Binding IsLoading}" IsIndeterminate="True" Margin="0,0,0,10"/>
+
+        <ListBox ItemsSource="{Binding Books}" Background="#3D1D32" Foreground="#FFE6E6FA">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="models:Book">
+                    <StackPanel Margin="4">
+                        <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="16" Foreground="#FFE6E6FA"/>
+                        <TextBlock Text="{Binding Author}" FontSize="12" Foreground="#D8BFD8"/>
+                        <TextBlock Text="{Binding Description}" FontSize="10" Foreground="#D8BFD8"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
 </Window>
