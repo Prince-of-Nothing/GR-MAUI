@@ -9,8 +9,8 @@ namespace GR_MAUI.Services;
 public class SupabaseBookService : IBookService
 {
     private readonly HttpClient _http = new();
-    private const string SupabaseUrl = "https://your-project.supabase.co/rest/v1/books";
-    private const string ApiKey = "YOUR_SUPABASE_ANON_KEY";
+    private const string SupabaseUrl = "https://mbikuyuhcttkcqpgiihr.supabase.co/rest/v1/books";
+    private const string ApiKey = "sb_publishable_0Z2sgGgw8f9RqCwxxJNCbw_mUrMQXfE";
 
     public SupabaseBookService()
     {
